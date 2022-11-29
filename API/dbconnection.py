@@ -11,7 +11,7 @@ def db_connect():
         mongo_host = 'localhost'
         mongo_port = 27017
 
-        if 'MONGO_PORT_27017_TCP_ADDR' in os.environ :
+        if 'MONGO_PORT_27017_TCP_ADDR' in os.environ:
             mongo_host = os.environ['MONGO_PORT_27017_TCP_ADDR']
 
         if 'MONGO_PORT_27017_TCP_PORT' in os.environ:

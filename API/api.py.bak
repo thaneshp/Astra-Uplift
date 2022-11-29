@@ -137,7 +137,7 @@ def fetch_records(scanid):
             try:
                 data =  ast.literal_eval(json.dumps(data))
             except Exception as e:
-                print(("Falied to parse",e))
+                print("Falied to parse",e)
             
             try:
                 if data['id'] == "NA":
@@ -212,7 +212,7 @@ def scan_postman():
         appname = content['appname']
         postman_url = content['postman_url']
         env_type = content['env_type']
-        if "email" in list(content.keys()):
+        if "email" in content.keys():
             email_verify_result = verify_email(content['email'])
             if email_verify_result == None:
                 # Not a valid email id
@@ -225,7 +225,7 @@ def scan_postman():
         try:
             # IP address param is optional.
             url = "NA"
-            if "ip" in list(content.keys()):
+            if "ip" in content.keys():
                 url = content['ip']
                 if urlparse(url).scheme == "http" or urlparse(url).scheme == "https":
                     ip = urlparse(url).netloc
