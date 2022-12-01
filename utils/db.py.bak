@@ -24,7 +24,7 @@ class Database_update:
 		if records:
 			for data in records:
 				data.pop('_id')
-				print(data)
+				print data
 
 	def insert_record(self,data):
 		try:
