@@ -1,7 +1,7 @@
 import time
 import requests
 import json
-import sendrequest as req
+from . import sendrequest as req
 import utils.logs as logs
 import subprocess
 import sys
@@ -124,7 +124,7 @@ def sqli_check(url,method,headers,body,scanid=None):
                     result = scan_status(taskid)
                     if result is True:
                         # API is vulnerable
-                        print "%s[+]{0} is vulnerable to SQL injection%s".format(url)% (api_logger.R, api_logger.W)
+                        print("%s[+]{0} is vulnerable to SQL injection%s".format(url)% (api_logger.R, api_logger.W))
                         attack_result = { "id" : 10, "scanid" : scanid, "url" : url, "alert": "SQL injection", "impact": "High", "req_headers": headers, "req_body":body, "res_headers": "NA" ,"res_body": "NA", "log" : scan_data}
                         dbupdate.insert_record(attack_result)
 

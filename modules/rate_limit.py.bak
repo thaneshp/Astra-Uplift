@@ -1,6 +1,6 @@
 import utils.logger as logger
 import utils.logs as logs
-from . import sendrequest as req
+import sendrequest as req
 import json
 import ast
 import base64
@@ -40,7 +40,7 @@ def brute_force(url,method,headers,body,attack_params,scanid):
 			length = len(str(param_value))
 			brute_list = generate_list(length,'int')
 
-		elif type(param_value) == str or type(param_value) == str:
+		elif type(param_value) == str or type(param_value) == unicode:
 			length = len(param_value)
 			brute_list = generate_list(length,'str')
 
@@ -100,7 +100,7 @@ def rate_limit(url,method,headers,body,scanid=None):
 				param_names = ['pin','password','cvv','pass','otp']
 				attack_params = []
 				for name in param_names:
-					for key,value in list(body.items()):
+					for key,value in body.items():
 						if name.lower() == key.lower():
 							attack_params.append(name.lower())
 
@@ -108,5 +108,5 @@ def rate_limit(url,method,headers,body,scanid=None):
 					attack_result = brute_force(url,method,headers,body,attack_params,scanid)
 					dbupdate.insert_record(attack_result)
 	except:
-		print("Failed to test rate limit")
+		print "Failed to test rate limit"
 					

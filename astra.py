@@ -277,7 +277,7 @@ def scan_core(collection_type,collection_name,url,headers,method,body,loginurl,l
             modules_scan(url,method,headers,body,scanid)      
 
     else:
-        print("%s [-]Invalid Collection. Please recheck collection Type/Name %s" %(api_logger.G, api_logger.W))
+        print(("%s [-]Invalid Collection. Please recheck collection Type/Name %s" %(api_logger.G, api_logger.W)))
 
 def get_arg(args=None):
         parser = argparse.ArgumentParser(description='Astra - REST API Security testing Framework')
@@ -305,7 +305,7 @@ def get_arg(args=None):
 
         results = parser.parse_args(args)
         if len(args) == 0:
-            print("%sAt least one argument is needed to procced.\nFor further information check help: %spython astra.py --help%s"% (api_logger.R, api_logger.G, api_logger.W))
+            print(("%sAt least one argument is needed to procced.\nFor further information check help: %spython astra.py --help%s"% (api_logger.R, api_logger.G, api_logger.W)))
             sys.exit(1)
 
         return (results.collection_type,
@@ -333,7 +333,7 @@ def main():
         try:
             loginurl,lognheaders,loginmethod,logidata = api_login.parse_logindata(loginurl)
         except:
-           print("[-]%s Failed to detect login API from collection %s " %(api_logger.R, api_logger.W))
+           print(("[-]%s Failed to detect login API from collection %s " %(api_logger.R, api_logger.W)))
            sys.exit(1)
         api_login.fetch_logintoken(loginurl,loginmethod,loginheaders,logindata)
         login_require = False

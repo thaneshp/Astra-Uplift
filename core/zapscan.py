@@ -87,7 +87,7 @@ class zap_scan:
                     impact = zap_alerts['alerts'][alert_id]['risk']
                     description = zap_alerts['alerts'][alert_id]['description']
                     solution = zap_alerts['alerts'][alert_id]['solution']
-                    print("%s[+]{0} is vulnerable to {1}%s".format(url,alert)% (self.api_logger.G, self.api_logger.W))
+                    print(("%s[+]{0} is vulnerable to {1}%s".format(url,alert)% (self.api_logger.G, self.api_logger.W)))
                     try:
                         self.update_db(scanid,url,alert,impact,description,solution,messageId)
                     except Exception as e:

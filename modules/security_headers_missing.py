@@ -2,7 +2,7 @@ import re
 
 from utils.logger import logger
 from utils.db import Database_update
-import sendrequest as req
+from . import sendrequest as req
 
 
 dbupdate = Database_update()
