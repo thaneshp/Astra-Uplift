@@ -77,6 +77,7 @@ def xss_filter(data):
 # Start the scan and returns the message
 @app.route('/scan/', methods = ['POST'])
 def start_scan():
+    print(db)
     scanid = generate_hash()
     content = request.get_json()
     try:
@@ -91,7 +92,7 @@ def start_scan():
             # Success
             msg = {"status" : scanid}
             try:
-                db.scanids.insert({"scanid" : scanid, "name" : name, "url" : url})
+                db.scanids.insert_one({"scanid" : scanid, "name" : name, "url" : url})
             except:
                 print("Failed to update DB")
         else:
