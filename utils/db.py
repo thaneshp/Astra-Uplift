@@ -40,7 +40,6 @@ class Database_update:
 
 	def update_scan_record(self,find,update):
 		try:
-			# print(find)
 			self.db.scanids.update_one(find,update)
 		except Exception as e:
 			raise e
