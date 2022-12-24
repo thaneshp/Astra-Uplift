@@ -9,8 +9,8 @@ function recent_scans() {
                 if(location.href.search('reports.html') != -1)
                 {
 
-                    scan_data = "<a href=/reports.html#"+resp[key]['scanid']+" onclick='location.reload()'>"+resp[key]['url']+"</a><br>";
-                    
+                    scan_data = "<a href=/reports.html#"+resp[key]['scanid']+" onclick='setTimeout(function() {location.reload();}, 50);'>"+resp[key]['url']+"</a><br>";
+                    console.log(scan_data)
                 } 
                 else
                 {

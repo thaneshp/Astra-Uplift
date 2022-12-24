@@ -137,7 +137,7 @@ def fetch_records(scanid):
 
             data.pop('_id')
             try:
-                data =  ast.literal_eval(json.dumps(data))
+                data = ast.literal_eval(json.dumps(data))
             except Exception as e:
                 print(("Falied to parse",e))
             
@@ -249,7 +249,7 @@ def scan_postman():
         else:
             try:
                 scan_id = generate_hash()
-                db.scanids.insert({"scanid" : scan_id, "name" : appname, "url" : postman_url,"env_type": env_type, "url" : url,"email" : email})
+                db.scanids.insert_one({"scanid" : scan_id, "name" : appname, "url" : postman_url,"env_type": env_type, "url" : url,"email" : email})
                 if ip_result == 1:
                     scan_result = scan_postman_collection(result,scan_id,url)
                 else:
@@ -260,7 +260,7 @@ def scan_postman():
 
             if scan_result == True:
                  # Update the email notification collection 
-                db.email.insert({"email" : email, "scanid" : scan_id, "to_email" : email, "email_notification" : 'N'})
+                db.email.insert_one({"email" : email, "scanid" : scan_id, "to_email" : email, "email_notification" : 'N'})
                 msg = {"status" : "Success", "scanid" : scan_id}
             else:
                 msg = {"status" : "Failed!"}
