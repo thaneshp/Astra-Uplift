@@ -25,8 +25,6 @@ from flask import jsonify
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 
-
-
 from utils.vulnerabilities import alerts
 #from utils.sendemail import send_email
 from jinja2 import utils

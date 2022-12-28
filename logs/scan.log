@@ -5240,3 +5240,66 @@ XXE: Server started.
 127.0.0.1 - - [25/Dec/2022 10:46:28] "[33mGET /static/bootstrap.min.css.map HTTP/1.1[0m" 404 -
 127.0.0.1 - - [25/Dec/2022 10:46:28] "GET /alerts/2869183056afb10b5c170be0bba5088f HTTP/1.1" 200 -
 127.0.0.1 - - [25/Dec/2022 10:46:28] "[36mGET /static/astra.png HTTP/1.1[0m" 304 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://172.16.0.116:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Dec/2022 12:23:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "GET /static/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "GET /static/bootstrap.min.css HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:23:44] "[36mGET /static/astra.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:49] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "GET /reports.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:23:51] "GET /alerts/2869183056afb10b5c170be0bba5088f HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:40] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "GET /reports.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:25:44] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "GET /reports.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "GET /alerts/2869183056afb10b5c170be0bba5088f HTTP/1.1" 200 -
+127.0.0.1 - - [28/Dec/2022 12:47:28] "[36mGET /static/astra.png HTTP/1.1[0m" 304 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://172.16.0.116:8094
+[33mPress CTRL+C to quit[0m

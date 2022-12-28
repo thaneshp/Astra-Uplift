@@ -49,13 +49,13 @@ def generate_origin(url):
 	if protocol == 'http':
 		origin = protocol+'://attackersite.com'
 	if protocol == 'https':
-	    origin = protocol+'://attackersite.com'
+		origin = protocol+'://attackersite.com'
 
 	domain_name = urlparse(url).hostname
 	postfixurl = domain_name+'.attackersite.com'
 	origin_headers.append(origin)
 	origin_headers.append(postfixurl)
-	logs.logging.info("Origin headers: %s",origin_headers)
+	logs.logging.info("Origin headers: %s", origin_headers)
 	return origin_headers
 
 def cors_main(url,method,headers,body,scanid=None):
