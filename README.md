@@ -139,13 +139,3 @@ $ python api.py
 ![alt text](https://raw.githubusercontent.com/flipkart-incubator/Astra/dev/Dashboard/static/scan-report.png)
 ### Detailed Report
 ![alt text](https://raw.githubusercontent.com/flipkart-incubator/Astra/dev/Dashboard/static/Detailed-report.png)
-
-
-## Lead Developer
-- Sagar Popat (@popat_sagar) 
-
-## Credits
-- Ankur Bhargava
-- Harsh Grover
-- Flipkart security team
-- Pardeep Battu
