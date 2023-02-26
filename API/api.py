@@ -72,10 +72,13 @@ def xss_filter(data):
 
     return filterd_data
 
+@app.route('/register/', methods = ['POST'])
+def create_user():
+    print("hello")
+
 # Start the scan and returns the message
 @app.route('/scan/', methods = ['POST'])
 def start_scan():
-    print(db)
     scanid = generate_hash()
     content = request.get_json()
     try:
