@@ -74,7 +74,13 @@ def xss_filter(data):
 
 @app.route('/register/', methods = ['POST'])
 def create_user():
-    print("hello")
+    content = request.get_json()
+
+    email = content['email']
+    password = content['password']
+
+    print(email)
+    print(password)
 
 # Start the scan and returns the message
 @app.route('/scan/', methods = ['POST'])
