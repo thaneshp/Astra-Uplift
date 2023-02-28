@@ -108,10 +108,16 @@
     
 	function loadDoc() 
 	{
+		var email = document.getElementById("email").value;
+		var password = document.getElementById("password").value;
+
+		body_data = {"email": email, "password": password};
+		json_body = JSON.stringify(body_data);
+
 		var xhttp = new XMLHttpRequest();
 		xhttp.open("POST", "/register/", true);
 		xhttp.setRequestHeader("Content-type", "application/json");
-		xhttp.send("hello");
+		xhttp.send(json_body);
 	}
 </script>
 <body>

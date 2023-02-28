@@ -10,6 +10,8 @@ import logging
 import requests
 import socket
 import re
+import uuid
+import bcrypt
 
 from urllib.parse import urlparse
 from dbconnection import db_connect
@@ -76,12 +78,16 @@ def xss_filter(data):
 def create_user():
     content = request.get_json()
 
+    user_id = uuid.uuid4().hex
     email = content['email']
-    password = content['password']
+    password = content['password'].encode('utf-8')
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
 
-    print(email)
-    print(password)
-
+    try:
+        db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
+    except:
+        print("Failed to update DB")
+    
 # Start the scan and returns the message
 @app.route('/scan/', methods = ['POST'])
 def start_scan():

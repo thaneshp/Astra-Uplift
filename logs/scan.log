@@ -9204,3 +9204,930 @@ Traceback (most recent call last):
     raise TypeError(
 TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
 127.0.0.1 - - [26/Feb/2023 14:12:34] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 16:10:32] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:32] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:33] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:37] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "GET /reports.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:38] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 16:10:40] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:45] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 16:10:46] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 186, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 16:10:47] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 16:10:56] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 16:16:19] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 190, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 16:16:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    db.users.add_user(content)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pymongo/collection.py", line 3213, in __call__
+    raise TypeError(
+TypeError: 'Collection' object is not callable. If you meant to call the 'add_user' method on a 'Collection' object it is failing because no such method exists.
+127.0.0.1 - - [28/Feb/2023 16:16:24] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    db.users.add_user(content)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pymongo/collection.py", line 3213, in __call__
+    raise TypeError(
+TypeError: 'Collection' object is not callable. If you meant to call the 'add_user' method on a 'Collection' object it is failing because no such method exists.
+127.0.0.1 - - [28/Feb/2023 16:18:29] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 190, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 16:18:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    db.users.add_user(content)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pymongo/collection.py", line 3213, in __call__
+    raise TypeError(
+TypeError: 'Collection' object is not callable. If you meant to call the 'add_user' method on a 'Collection' object it is failing because no such method exists.
+127.0.0.1 - - [28/Feb/2023 16:18:46] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 16:20:09] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 190, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 16:20:09] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    db.users.command(content)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pymongo/collection.py", line 3213, in __call__
+    raise TypeError(
+TypeError: 'Collection' object is not callable. If you meant to call the 'command' method on a 'Collection' object it is failing because no such method exists.
+127.0.0.1 - - [28/Feb/2023 16:20:16] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 16:31:50] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 191, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 16:31:50] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 16:31:54] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:37:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/bootstrap.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/bootstrap.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/bootstrap-table.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/scan.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "[36mGET /static/bootstrap-table.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [28/Feb/2023 17:37:16] "GET /scan/scanids/ HTTP/1.1" 200 -
+127.0.0.1 - - [28/Feb/2023 17:37:18] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 192, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:37:19] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:22] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:28] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:28] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:28] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:28] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:37:41] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 192, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:37:41] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:45] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:46] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:46] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:46] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 82, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:37:46] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:38:07] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 191, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:38:07] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:38:10] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:38:11] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:38:11] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:38:11] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:40:55] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 194, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:40:55] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:40:58] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:42:24] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 193, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:42:25] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:42:28] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:47:33] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 197, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:47:33] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 84, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:47:36] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 84, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:47:40] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 84, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:47:40] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 84, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:47:40] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 84, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:47:40] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 84, in create_user
+    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/bcrypt/__init__.py", line 74, in hashpw
+    raise TypeError("Strings must be encoded before hashing")
+TypeError: Strings must be encoded before hashing
+127.0.0.1 - - [28/Feb/2023 17:47:40] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:49:42] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 197, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:49:42] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:49:45] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8094
+ * Running on http://192.168.0.13:8094
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [28/Feb/2023 17:51:17] "GET /register.html HTTP/1.1" 200 -
+Exception on /favicon.ico [GET]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/Users/thanesh/Documents/git/probeX/API/api.py", line 198, in view_dashboard
+    return render_template('{}'.format(page))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: favicon.ico
+127.0.0.1 - - [28/Feb/2023 17:51:17] "[35m[1mGET /favicon.ico HTTP/1.1[0m" 500 -
+Exception on /register/ [POST]
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1823, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 1842, in finalize_request
+    response = self.make_response(rv)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/flask/app.py", line 2134, in make_response
+    raise TypeError(
+TypeError: The view function for 'create_user' did not return a valid response. The function either returned None or ended without a return statement.
+127.0.0.1 - - [28/Feb/2023 17:51:22] "[35m[1mPOST /register/ HTTP/1.1[0m" 500 -

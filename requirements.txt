@@ -5,3 +5,4 @@ ConfigParser
 pyjwt
 flask
 sqlmap
+bcrypt
