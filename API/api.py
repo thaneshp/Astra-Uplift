@@ -19,7 +19,7 @@ from scanstatus import check_scan_status, scan_status
 
 sys.path.append('../')
 
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, redirect, url_for
 from flask import Response, make_response
 from flask import request
 from flask import Flask
@@ -85,6 +85,7 @@ def create_user():
 
     try:
         db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
+        return redirect(url_for("view_dashboard", page="scan.html"))
     except:
         print("Failed to update DB")
     

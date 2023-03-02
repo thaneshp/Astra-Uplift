@@ -1,48 +1,45 @@
 function recent_scans() {
   var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-            resp = JSON.parse(this.responseText);
-        
-            for (key in resp)
-            {
-                if(location.href.search('reports.html') != -1)
-                {
+      resp = JSON.parse(this.responseText);
 
-                    scan_data = "<a href=/reports.html#"+resp[key]['scanid']+" onclick='setTimeout(function() {location.reload();}, 50);'>"+resp[key]['url']+"</a><br>";
-                    console.log(scan_data)
-                } 
-                else
-                {
-                    
-                    scan_data = "<a href=/reports.html#"+resp[key]['scanid']+">"+resp[key]['url']+"</a><br>";
-                }
+      for (key in resp) {
+        if (location.href.search("reports.html") != -1) {
+          scan_data =
+            "<a href=/reports.html#" +
+            resp[key]["scanid"] +
+            " onclick='setTimeout(function() {location.reload();}, 50);'>" +
+            resp[key]["url"] +
+            "</a><br>";
+        } else {
+          scan_data =
+            "<a href=/reports.html#" +
+            resp[key]["scanid"] +
+            ">" +
+            resp[key]["url"] +
+            "</a><br>";
+        }
 
-                // Update dictionary
-                console.log(resp[key]["scan_status"]);
-                if(resp[key]["scan_status"] == "Completed")
-                {
-                  resp[key].scan_status = '<span class="label label-success">Completed</span>';
-                }
-                else
-                {
+        // Update dictionary
+        console.log(resp[key]["scan_status"]);
+        if (resp[key]["scan_status"] == "Completed") {
+          resp[key].scan_status =
+            '<span class="label label-success">Completed</span>';
+        } else {
+          resp[key].scan_status =
+            '<span class="label label-warning">In Progress</span>';
+        }
+        resp[key].scanid = scan_data;
+        resp[key].id = parseInt(key) + 1;
+        console.log(resp);
+      }
 
-                  resp[key].scan_status = '<span class="label label-warning">In Progress</span>';
-
-                }
-                resp[key].scanid = scan_data;
-                resp[key].id = parseInt(key) + 1;
-                console.log(resp);
-                
-            }
-
-             $(function () 
-            {
-                $('#table').bootstrapTable({
-                data: resp
-                 });
-             });
-
+      $(function () {
+        $("#table").bootstrapTable({
+          data: resp,
+        });
+      });
     }
   };
   xhttp.open("GET", "/scan/scanids/", true);
