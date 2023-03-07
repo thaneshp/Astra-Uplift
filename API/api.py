@@ -19,7 +19,7 @@ from scanstatus import check_scan_status, scan_status
 
 sys.path.append('../')
 
-from flask import Flask, render_template, send_from_directory, redirect, url_for
+from flask import Flask, render_template, send_from_directory, redirect, url_for, session
 from flask import Response, make_response
 from flask import request
 from flask import Flask
@@ -74,6 +74,10 @@ def xss_filter(data):
 
     return filterd_data
 
+# @app.route('/favicon.ico')
+# def favicon():
+#     return app.send_static_file('favicon.ico')
+
 @app.route('/register/', methods = ['POST'])
 def create_user():
     content = request.get_json()
@@ -82,10 +86,10 @@ def create_user():
     email = content['email']
     password = content['password'].encode('utf-8')
     hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
-
+    
     try:
         db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
-        return redirect(url_for("view_dashboard", page="scan.html"))
+        return "test"
     except:
         print("Failed to update DB")
     
@@ -195,10 +199,11 @@ def return_alerts(scanid):
 @app.route('/', defaults={'page': 'scan.html'})
 @app.route('/<page>')
 def view_dashboard(page):
+    print("hellow")
     return render_template('{}'.format(page))
 
 def start_server():
-    app.run(host='0.0.0.0', port= 8094)
+    app.run(host='0.0.0.0', port=8094, debug=True)
 
 
 ############################Postman collection################################
