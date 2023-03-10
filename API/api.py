@@ -19,7 +19,7 @@ from scanstatus import check_scan_status, scan_status
 
 sys.path.append('../')
 
-from flask import Flask, render_template, send_from_directory, redirect, url_for, session
+from flask import Flask, render_template, send_from_directory, session
 from flask import Response, make_response
 from flask import request
 from flask import Flask
@@ -74,9 +74,9 @@ def xss_filter(data):
 
     return filterd_data
 
-# @app.route('/favicon.ico')
-# def favicon():
-#     return app.send_static_file('favicon.ico')
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('favicon.ico')
 
 @app.route('/register/', methods = ['POST'])
 def create_user():
@@ -88,8 +88,9 @@ def create_user():
     hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
     
     try:
-        db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
-        return "test"
+        test = db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
+        print(test)
+        return "hello"
     except:
         print("Failed to update DB")
     
