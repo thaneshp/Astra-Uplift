@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 from dbconnection import db_connect
 from scanstatus import check_scan_status, scan_status
 
-sys.path.append('../')
+sys.path.append("../")
 
 from flask import Flask, render_template, send_from_directory, session
 from flask import Response, make_response
@@ -28,27 +28,33 @@ from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 
 from utils.vulnerabilities import alerts
-#from utils.sendemail import send_email
+
+# from utils.sendemail import send_email
 from jinja2 import utils
+
 # from utils.email_cron import send_email_notification
 
-SCRIPT_PATH= os.path.split(os.path.realpath(__file__))[0]
-sys.path.append(os.path.join(SCRIPT_PATH,'..'))
+SCRIPT_PATH = os.path.split(os.path.realpath(__file__))[0]
+sys.path.append(os.path.join(SCRIPT_PATH, ".."))
 # import scan_single_api, scan_postman_collection
 from astra import *
 
-app = Flask(__name__, template_folder='../Dashboard/templates', static_folder='../Dashboard/static')
+app = Flask(
+    __name__,
+    template_folder="../Dashboard/templates",
+    static_folder="../Dashboard/static",
+)
+app.secret_key = "dev"
 
 
 class ServerThread(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
 
-  def __init__(self):
-    threading.Thread.__init__(self)
-
-  def run(self):
-    log = logging.getLogger('werkzeug')
-    log.setLevel(logging.ERROR)
-    app.run(host='0.0.0.0', port= 8094)
+    def run(self):
+        log = logging.getLogger("werkzeug")
+        log.setLevel(logging.ERROR)
+        app.run(host="0.0.0.0", port=8094)
 
 
 db_object = db_connect()
@@ -58,15 +64,16 @@ db = db_object.apiscan
 
 ############################# Start scan API ######################################
 def generate_hash():
-    # Return md5 hash value of current timestmap 
-    timestamp = str(time.time()).encode('utf-8')
+    # Return md5 hash value of current timestmap
+    timestamp = str(time.time()).encode("utf-8")
     scanid = hashlib.md5(timestamp).hexdigest()
     return scanid
+
 
 def xss_filter(data):
     data = str(data)
     # Filter special chars to prevent XSS
-    filterd_data =  data.replace("<","&lt;").replace(">","&gt;")
+    filterd_data = data.replace("<", "&lt;").replace(">", "&gt;")
     try:
         filterd_data = ast.literal_eval(filterd_data)
     except:
@@ -74,173 +81,214 @@ def xss_filter(data):
 
     return filterd_data
 
-@app.route('/favicon.ico')
-def favicon():
-    return app.send_static_file('favicon.ico')
 
-# Function to create a user
-@app.route('/register/', methods = ['POST'])
+@app.route("/favicon.ico")
+def favicon():
+    return app.send_static_file("favicon.ico")
+
+
+# Function to create a new user
+@app.route("/register/", methods=["POST"])
 def create_user():
     content = request.get_json()
 
     user_id = uuid.uuid4().hex
-    email = content['email']
-    password = content['password'].encode('utf-8')
+    name = content["name"]
+    email = content["email"]
+    password = content["password"].encode("utf-8")
     hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
-    
+
     try:
-        db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
-        return "hello"
+        db.users.insert_one(
+            {
+                "user_id": user_id,
+                "fullname": name,
+                "email": email,
+                "password": hashed_password,
+            }
+        )
+
+        # Store user_id in session
+        session["user_id"] = user_id
+
+        return "User created successfully"
     except:
         print("Failed to update DB")
-    
+
+
 # Start the scan and returns the message
-@app.route('/scan/', methods = ['POST'])
+@app.route("/scan/", methods=["POST"])
 def start_scan():
     scanid = generate_hash()
     content = request.get_json()
     try:
-        name = content['appname']
-        url = str(content['url'])
-        headers = str(content['headers'])
-        body = str(content['body'])
-        method = content['method']
+        name = content["appname"]
+        url = str(content["url"])
+        headers = str(content["headers"])
+        body = str(content["body"])
+        method = content["method"]
         api = "Y"
         scan_status = scan_single_api(url, method, headers, body, api, scanid)
         if scan_status is True:
             # Success
-            msg = {"status" : scanid}
+            msg = {"status": scanid}
             try:
-                db.scanids.insert_one({"scanid" : scanid, "name" : name, "url" : url})
+                db.scanids.insert_one({"scanid": scanid, "name": name, "url": url})
             except:
                 print("Failed to update DB")
         else:
-            msg = {"status" : "Failed"}
-    
+            msg = {"status": "Failed"}
+
     except:
-        msg = {"status" : "Failed"} 
-    
+        msg = {"status": "Failed"}
+
     return jsonify(msg)
 
 
-@app.route('/scan/scanids/', methods=['GET'])
+@app.route("/scan/scanids/", methods=["GET"])
 def fetch_scanids():
     scanids = []
     records = db.scanids.find({})
     if records:
         for data in records:
-            data.pop('_id')
+            data.pop("_id")
             try:
-                data =  ast.literal_eval(json.dumps(data))
+                data = ast.literal_eval(json.dumps(data))
                 scan_status = check_scan_status(data)
-                if data['scanid']:
-                    if data['scanid'] not in scanids:
-                        url = xss_filter(data['url'])
-                        scanids.append({"scanid" : data['scanid'], "name" : xss_filter(data['name']), "url" : url, "scan_status" : scan_status}) 
+                if data["scanid"]:
+                    if data["scanid"] not in scanids:
+                        url = xss_filter(data["url"])
+                        scanids.append(
+                            {
+                                "scanid": data["scanid"],
+                                "name": xss_filter(data["name"]),
+                                "url": url,
+                                "scan_status": scan_status,
+                            }
+                        )
             except:
                 pass
 
         return jsonify(scanids)
 
+
 ############################# Alerts API ##########################################
 
-# Returns vulnerbilities identified by tool 
+
+# Returns vulnerbilities identified by tool
 def fetch_records(scanid):
     # Return alerts identified by the tool
     vul_list = []
-    records = db.vulnerabilities.find({"scanid":scanid})
+    records = db.vulnerabilities.find({"scanid": scanid})
     if records:
-        for data in records:  
-            if data['req_body'] == None:
-                data['req_body'] = "NA" 
+        for data in records:
+            if data["req_body"] == None:
+                data["req_body"] = "NA"
 
-            data.pop('_id')
+            data.pop("_id")
             try:
                 data = ast.literal_eval(json.dumps(data))
             except Exception as e:
-                print(("Falied to parse",e))
-            
+                print(("Falied to parse", e))
+
             try:
-                if data['id'] == "NA":
-                    all_data = {'url' : data['url'], 'impact' : data['impact'], 'name' : data['name'], 'req_headers' : data['req_headers'], 'req_body' : data['req_body'], 'res_headers' : data['res_headers'], 'res_body' : data['res_body'], 'Description' : data['Description'], 'remediation' : data['remediation']}
+                if data["id"] == "NA":
+                    all_data = {
+                        "url": data["url"],
+                        "impact": data["impact"],
+                        "name": data["name"],
+                        "req_headers": data["req_headers"],
+                        "req_body": data["req_body"],
+                        "res_headers": data["res_headers"],
+                        "res_body": data["res_body"],
+                        "Description": data["Description"],
+                        "remediation": data["remediation"],
+                    }
                     vul_list.append(all_data)
 
-                if data['id']:
+                if data["id"]:
                     for vul in alerts:
-                        if data['id'] == vul['id']:
-                            #print "response body",data['req_headers'],type(data['req_headers'])
+                        if data["id"] == vul["id"]:
+                            # print "response body",data['req_headers'],type(data['req_headers'])
                             all_data = {
-                                        'url' : xss_filter(data['url']),
-                                        'impact' : data['impact'],
-                                        'name' : xss_filter(data['alert']),
-                                        'req_headers' : data['req_headers'],
-                                        'req_body' : xss_filter(data['req_body']),
-                                        'res_headers' : xss_filter(data['res_headers']),
-                                        'res_body' : xss_filter(data['res_body']),
-                                        'Description' : vul['Description'],
-                                        'remediation' : vul['remediation']
-                                        }
+                                "url": xss_filter(data["url"]),
+                                "impact": data["impact"],
+                                "name": xss_filter(data["alert"]),
+                                "req_headers": data["req_headers"],
+                                "req_body": xss_filter(data["req_body"]),
+                                "res_headers": xss_filter(data["res_headers"]),
+                                "res_body": xss_filter(data["res_body"]),
+                                "Description": vul["Description"],
+                                "remediation": vul["remediation"],
+                            }
                             vul_list.append(all_data)
                             break
 
             except:
                 pass
 
-        return vul_list        
+        return vul_list
 
-@app.route('/alerts/<scanid>', methods=['GET'])
+
+@app.route("/alerts/<scanid>", methods=["GET"])
 def return_alerts(scanid):
     result = fetch_records(scanid)
     resp = jsonify(result)
     resp.headers["Access-Control-Allow-Origin"] = "*"
     return resp
 
+
 #############################Dashboard#########################################
 
-@app.route('/', defaults={'page': 'scan.html'})
-@app.route('/<page>')
+
+@app.route("/", defaults={"page": "scan.html"})
+@app.route("/<page>")
 def view_dashboard(page):
     print("hellow")
-    return render_template('{}'.format(page))
+    return render_template("{}".format(page))
+
 
 def start_server():
-    app.run(host='0.0.0.0', port=8094, debug=True)
+    app.run(host="0.0.0.0", port=8094, debug=True)
 
 
 ############################Postman collection################################
 
+
 def postman_collection_download(url):
     # Download postman collection from URL
-    postman_req = requests.get(url,allow_redirects=True, verify=False)
+    postman_req = requests.get(url, allow_redirects=True, verify=False)
     try:
-        filename = url[url.rfind("/")+1:]+"_"+generate_hash()
-        open("../Files/"+filename, 'wb').write(postman_req.content)
-        return "../Files/"+filename
+        filename = url[url.rfind("/") + 1 :] + "_" + generate_hash()
+        open("../Files/" + filename, "wb").write(postman_req.content)
+        return "../Files/" + filename
     except:
         return False
 
 
 def verify_email(email):
     # credit : www.scottbrady91.com
-    match = re.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', email)
+    match = re.match(
+        "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$", email
+    )
     return match
 
 
-@app.route('/scan/postman/', methods = ['POST'])
+@app.route("/scan/postman/", methods=["POST"])
 def scan_postman():
     content = request.get_json()
     try:
         # mandatory inputs
-        appname = content['appname']
-        postman_url = content['postman_url']
-        env_type = content['env_type']
+        appname = content["appname"]
+        postman_url = content["postman_url"]
+        env_type = content["env_type"]
         if "email" in list(content.keys()):
-            email_verify_result = verify_email(content['email'])
+            email_verify_result = verify_email(content["email"])
             if email_verify_result == None:
                 # Not a valid email id
                 email = "NA"
             else:
-                email = content['email']
+                email = content["email"]
         else:
             email = "NA"
 
@@ -248,7 +296,7 @@ def scan_postman():
             # IP address param is optional.
             url = "NA"
             if "ip" in list(content.keys()):
-                url = content['ip']
+                url = content["ip"]
                 if urlparse(url).scheme == "http" or urlparse(url).scheme == "https":
                     ip = urlparse(url).netloc
                     socket.inet_aton(ip)
@@ -260,39 +308,54 @@ def scan_postman():
             print("Missing Arugument or invalid IP address!")
             ip_result = 0
 
-
         result = postman_collection_download(postman_url)
 
         if result is False:
-            msg = {"status" : "Failed to Download Postman collection"}
+            msg = {"status": "Failed to Download Postman collection"}
             return msg
         else:
             try:
                 scan_id = generate_hash()
-                db.scanids.insert_one({"scanid" : scan_id, "name" : appname, "url" : postman_url,"env_type": env_type, "url" : url,"email" : email})
+                db.scanids.insert_one(
+                    {
+                        "scanid": scan_id,
+                        "name": appname,
+                        "url": postman_url,
+                        "env_type": env_type,
+                        "url": url,
+                        "email": email,
+                    }
+                )
                 if ip_result == 1:
-                    scan_result = scan_postman_collection(result,scan_id,url)
+                    scan_result = scan_postman_collection(result, scan_id, url)
                 else:
-                    scan_result = scan_postman_collection(result,scan_id)
+                    scan_result = scan_postman_collection(result, scan_id)
             except:
-                #Failed to update the DB
+                # Failed to update the DB
                 pass
 
             if scan_result == True:
-                 # Update the email notification collection 
-                db.email.insert_one({"email" : email, "scanid" : scan_id, "to_email" : email, "email_notification" : 'N'})
-                msg = {"status" : "Success", "scanid" : scan_id}
+                # Update the email notification collection
+                db.email.insert_one(
+                    {
+                        "email": email,
+                        "scanid": scan_id,
+                        "to_email": email,
+                        "email_notification": "N",
+                    }
+                )
+                msg = {"status": "Success", "scanid": scan_id}
             else:
-                msg = {"status" : "Failed!"}
-            
+                msg = {"status": "Failed!"}
 
     except:
         msg = {"status" "Failed. Application name and postman URL is required!"}
 
     return jsonify(msg)
 
+
 def main():
-    if os.getcwd().split('/')[-1] == 'API':
+    if os.getcwd().split("/")[-1] == "API":
         start_server()
     else:
         thread = ServerThread()
@@ -300,9 +363,10 @@ def main():
         thread.start()
 
 
-@app.route('/robots.txt', methods=['GET'])
+@app.route("/robots.txt", methods=["GET"])
 def robots():
     return send_from_directory(app.static_folder, "robots.txt")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
