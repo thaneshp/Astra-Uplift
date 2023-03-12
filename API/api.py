@@ -78,6 +78,7 @@ def xss_filter(data):
 def favicon():
     return app.send_static_file('favicon.ico')
 
+# Function to create a user
 @app.route('/register/', methods = ['POST'])
 def create_user():
     content = request.get_json()
@@ -88,8 +89,7 @@ def create_user():
     hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
     
     try:
-        test = db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
-        print(test)
+        db.users.insert_one({"user_id": user_id, "email": email, "password": hashed_password})
         return "hello"
     except:
         print("Failed to update DB")
