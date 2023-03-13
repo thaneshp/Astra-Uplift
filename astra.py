@@ -34,8 +34,8 @@ from utils.db import Database_update
 from utils.email_cron import email_start_cron
 
 
-if os.getcwd().split('/')[-1] != 'API':
-    from API.api import main
+if os.getcwd().split('/')[-1] != 'app':
+    from app.api import main
     
 dbupdate = Database_update()
 

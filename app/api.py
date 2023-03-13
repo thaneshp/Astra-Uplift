@@ -1,36 +1,31 @@
 import ast
-import os
-import json
-import sys
 import hashlib
-import time
 import json
-import threading
 import logging
-import requests
-import socket
+import os
 import re
-import uuid
-import bcrypt
-
+import socket
+import sys
+import threading
+import time
 from urllib.parse import urlparse
+
+import requests
+
 from dbconnection import db_connect
 from scanstatus import check_scan_status, scan_status
 
 sys.path.append("../")
 
-from flask import Flask, render_template, send_from_directory, session
-from flask import Response, make_response
-from flask import request
-from flask import Flask
-from flask import jsonify
-from pymongo import MongoClient
-from pymongo.errors import ServerSelectionTimeoutError
-
-from utils.vulnerabilities import alerts
-
+from flask import (Flask, Response, jsonify, make_response, render_template,
+                   request, send_from_directory)
 # from utils.sendemail import send_email
 from jinja2 import utils
+from pymongo import MongoClient
+from pymongo.errors import ServerSelectionTimeoutError
+from utils.vulnerabilities import alerts
+
+from auth import auth_bp
 
 # from utils.email_cron import send_email_notification
 
@@ -41,11 +36,12 @@ from astra import *
 
 app = Flask(
     __name__,
-    template_folder="../Dashboard/templates",
-    static_folder="../Dashboard/static",
+    template_folder="./templates",
+    static_folder="./static",
 )
 app.secret_key = "dev"
 
+app.register_blueprint(auth_bp)
 
 class ServerThread(threading.Thread):
     def __init__(self):
@@ -81,40 +77,11 @@ def xss_filter(data):
 
     return filterd_data
 
-
+# TODO: Add actual favicon.ico
+# This function silences the error
 @app.route("/favicon.ico")
 def favicon():
     return app.send_static_file("favicon.ico")
-
-
-# Function to create a new user
-@app.route("/register/", methods=["POST"])
-def create_user():
-    content = request.get_json()
-
-    user_id = uuid.uuid4().hex
-    name = content["name"]
-    email = content["email"]
-    password = content["password"].encode("utf-8")
-    hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
-
-    try:
-        db.users.insert_one(
-            {
-                "user_id": user_id,
-                "fullname": name,
-                "email": email,
-                "password": hashed_password,
-            }
-        )
-
-        # Store user_id in session
-        session["user_id"] = user_id
-
-        return "User created successfully"
-    except:
-        print("Failed to update DB")
-
 
 # Start the scan and returns the message
 @app.route("/scan/", methods=["POST"])
@@ -244,7 +211,6 @@ def return_alerts(scanid):
 @app.route("/", defaults={"page": "scan.html"})
 @app.route("/<page>")
 def view_dashboard(page):
-    print("hellow")
     return render_template("{}".format(page))
 
 
@@ -355,7 +321,7 @@ def scan_postman():
 
 
 def main():
-    if os.getcwd().split("/")[-1] == "API":
+    if os.getcwd().split("/")[-1] == "app":
         start_server()
     else:
         thread = ServerThread()

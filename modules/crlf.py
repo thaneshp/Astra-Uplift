@@ -11,7 +11,7 @@ dbupdate = Database_update()
 def fetch_crlf_payload():   
     # This function fetch the payloads from text file.               
     payload_list = []
-    if os.getcwd().split('/')[-1] == 'API':
+    if os.getcwd().split('/')[-1] == 'app':
         path = '../Payloads/crlf.txt'
     else:
         path = 'Payloads/crlf.txt'

@@ -40,7 +40,7 @@ def zap_start():
 	if result == True:
 		# Zap is already running. No need to start it again.
 		return result
-	if os.getcwd().split('/')[-1] == 'API':
+	if os.getcwd().split('/')[-1] == 'app':
 		os.chdir("../core/ZAP_2.7.0")
 	else:
 		os.chdir("core/ZAP_2.7.0")

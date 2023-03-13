@@ -16,7 +16,7 @@ api_logger = logger()
 def fetch_xss_payload():
     # Returns xss payloads in list type
     payload_list = []
-    if os.getcwd().split('/')[-1] == 'API':
+    if os.getcwd().split('/')[-1] == 'app':
         path = '../Payloads/xss.txt'
     else:
         path = 'Payloads/xss.txt'

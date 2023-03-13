@@ -16,7 +16,7 @@ redirection_url = "www.google.com"
 def fetch_open_redirect_payload():      
     # Returns open redirect payloads in list type
     payload_list = []
-    if os.getcwd().split('/')[-1] == 'API':
+    if os.getcwd().split('/')[-1] == 'app':
         path = '../Payloads/redirect.txt'
     else:
         path = 'Payloads/redirect.txt'

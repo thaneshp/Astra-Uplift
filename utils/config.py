@@ -10,7 +10,7 @@ def get_allvalues(section):
 
 def get_value(filename,section,name):
 	# Return only one value from config file
-	if os.getcwd().split('/')[-1] == 'API':
+	if os.getcwd().split('/')[-1] == 'app':
 		dir_name = '../utils/'
 	else:
 		dir_name = 'utils/'

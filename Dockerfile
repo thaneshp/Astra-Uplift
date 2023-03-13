@@ -8,7 +8,7 @@ COPY . $app
 
 RUN pip install -r requirements.txt
 
-WORKDIR API/
+WORKDIR app/
 
 EXPOSE 8094
 ENTRYPOINT ["python", "./api.py"]

@@ -1,7 +1,7 @@
 import logging
 import os
 
-if os.getcwd().split('/')[-1] == 'API':
+if os.getcwd().split('/')[-1] == 'app':
         path = '../logs/scan.log'
 else:
         path = 'logs/scan.log'

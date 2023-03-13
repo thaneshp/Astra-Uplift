@@ -65,7 +65,7 @@ class xxe_scan:
     def fetch_xxe_payload(self):
         # Returns xxe payloads in list type
         payload_list = []
-        if os.getcwd().split('/')[-1] == 'API':
+        if os.getcwd().split('/')[-1] == 'app':
             path = '../Payloads/xxe.txt'
         else:
             path = 'Payloads/xxe.txt'
